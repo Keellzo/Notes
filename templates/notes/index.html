@@ -1,0 +1,17 @@
+{{ define "notes/index.html" }}
+{{ template "layouts/header.html" .}}
+<h1>All notes</h1>
+
+<ul>
+    {{ with .notes }}
+        {{ range . }}
+        <li><td>{{ .Name }}</td></li>
+        {{ end }}
+    {{ end }}
+</ul>
+
+    <p>
+        <a class="btn btn-outline-primary" href="/notes/new" role="button">New Note</a>
+    </p>
+{{ template "layouts/footer.html" .}}
+{{ end }}
